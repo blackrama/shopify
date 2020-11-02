@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title homepage
+		link(href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,900;1,700&display=swap" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet")
+		link(rel="stylesheet", href="./css/style.css")
+
+	body
+		.wrapper
+			.shopify-section
+				header.header-section.header-section_fixed
+					.container.d-flex
+						a(href="#").header-nav_toggle#header_nav_toggle
+						.header-logo
+							img(src="./img/logo.png", alt="logo").header-tumb
+						nav.header-nav
+							a(href="#").header-nav_close
+								img(src="./img/close.png", alt="close")
+							a(href="").header-link Vikings
+							a(href="").header-link Ancient Egypt
+							a(href="").header-link Celtics
+							a(href="").header-link.header-link_danger Sale
+							a(href="#").header-search#header_search
+								img(src="./img/search.svg", alt="search")
+							form.header-form(action="/search" method="get")
+								.header-group
+									input.header-input(type="text" name="q" value="Type your search")
+									input.header-btn(type="submit")
+						a(href="#").header-checkout#header_checkout
+							img(src="./img/checkout.svg", alt="checkout")
+							span.header-badge.header-badge_danger
+			main.main
+				.shopify-section
+					.main-section.d-flex
+						.container.text-center
+							h1.main-title.main-title_white Fenrir The Monster Wolf of Norse Mythology Necklace
+							.main-info
+								span.main-price $19.95    
+								span.main-sale $29.95 
+							a(href="#").main-btn.btn.btn-danger Start Shopping
+
+
+		script(src="./js/main.js")

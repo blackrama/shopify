@@ -1,0 +1,84 @@
+@media screen and (max-width: 1199px) {
+  .review{
+    &_title {
+      & br {
+        display: inline;  
+      }
+    }
+  }
+}
+@media screen and (max-width: 960px) {
+  .search_text {
+    font-size: 20px;
+  }
+  .header {
+    margin-right: 20px;
+  }
+  .content {
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .content {
+    margin-right: 0px;
+  }
+  .search {
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 855px) {
+  .header .logo {
+    margin-top: 0;
+  }
+  .wrapper {
+    display: block;
+  }
+  .header {
+    padding-top: 30px;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 560px) {
+  .container {
+    flex-direction: column;
+  }
+  .search_text {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .content {
+    overflow: visible;
+  }
+  .wrapper {
+    overflow: visible;
+  }
+  .review_btn_box {
+    flex-direction: column;
+    & .btn {
+      width: 180px;
+      margin-bottom: 10px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .review_avatar img {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    min-height: 55px;
+  }
+  .review {
+    padding-left: 20px;
+  }
+  .review_content {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .search_find {
+    display: none;
+  }
+  
+}

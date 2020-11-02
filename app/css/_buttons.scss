@@ -1,0 +1,149 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: .3s all ease;
+  &_rect {
+    border-radius: 22px;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &_primary {
+    background-color: $primary;
+    color: $w;
+    border:1px solid $primary;
+    &:hover {
+      background-color: $w;
+      color: $primary;
+      & svg {
+        & path {
+          fill: $primary;
+        }
+        & rect {
+          fill: $primary;
+        }
+      }
+    }
+    &_darken {
+      background-color: $primary1;
+      color: $w;
+      &:hover {
+        background-color: $w;
+        border:1px solid $primary1;
+        color: $primary1;
+      }
+    }
+    &_outline {
+      background-color: $w;
+      color: $primary;
+      &:hover {
+        background-color: $primary;
+        color: $w;
+      }
+    }
+    &_opacity {
+      background-color: transparentize($primary, .8);
+      color: $primary;
+      & svg {
+        & path {
+          fill: $primary;
+        }
+        & rect {
+          fill: $primary;
+        }
+      }
+      &:hover {
+        background-color: $primary;
+        color: $w;
+        & svg {
+          & path {
+            fill: $w;
+          }
+          & rect {
+            fill: $w;
+          }
+        }
+      }
+    }
+  }
+  &_violet {
+    &_opacity {
+      color: #7048e6;
+      border: 1px solid transparentize(#9c7cf2, $amount: 0.5);
+      background-color: transparentize(#9c7cf2, $amount: 0.5);
+      &:hover {
+        color: $w;
+        background-color: #7048e6;
+        border-color: #7048e6;
+      }
+    }
+  }
+  &_warning {
+    background-color: $warning;
+    color: $w;
+    &:hover {
+      border: 1px solid $warning;
+      color: $warning;
+      background-color: $w;
+    }
+    &_opacity {
+      color: $warning;
+      border: 1px solid transparentize($warning, $amount: 0.8);
+      background-color: transparentize($warning, $amount: 0.8);
+      &:hover {
+        color: $w;
+        background-color: $warning;
+      }
+    }
+    
+  }
+  &_white {
+    color: #000;
+    background-color: $w;
+    &:hover {
+      color: $w;
+      background-color: #000;
+    }
+  }
+  &_white_1 {
+    color: #6c6c6c;
+  }
+  &_secondary {
+    background-color: $secondary1 ;
+    color: $secondary2;
+  }
+  &_secondary_3 {
+    background-color: $secondary3;
+    color: $secondary4;
+    &_opacity {
+      background-color: transparentize( $secondary3, 0.9);
+      color: $secondary4;
+      &:hover {
+        color: $w;
+        background-color: $secondary3;
+      }
+    }
+  }
+  &_secondary_5 {
+    background-color: $secondary5;
+    color: $secondary6;
+    &:hover {
+      text-decoration: none;
+      background-color: $secondary6;
+      color: $w;
+    }
+  }
+  &_light {
+    background-color: $w;
+    color: #111;
+    border: 1px solid $w;
+    &:hover {
+      background-color: $primary;
+      color:$w;
+    }
+  }
+}

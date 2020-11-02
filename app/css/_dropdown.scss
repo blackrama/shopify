@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    align-items: center;
+    &_link {
+        transition: .3s all ease;
+        &:hover {
+            text-decoration: none;
+        }
+        margin-right: 62px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

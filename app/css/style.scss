@@ -1,0 +1,169 @@
+
+$white: #fff;
+$danger: #CC0000;
+$dark: #202020;
+
+@import './bootstrap-reboot';
+// @import 'fonts';
+// @import 'buttons';
+// @import 'dropdown';
+// @import 'titles';
+// @import 'slick';
+// @import 'switchers';
+// @import 'rangeslider';
+// @import 'colorpicker';
+:focus,
+:active {
+  outline: none !important;
+}
+html {
+  font-size: 16px;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  height: 100%;
+  color: $dark;
+}
+img,
+video {
+  max-width: 100%;
+}
+.container {
+  max-width: 1154px;
+  margin: 0 auto;
+  width: 100%;
+  &.d-flex {
+    align-items: center;
+  }
+}
+.d-flex {
+  display: flex;
+}
+.text-center {
+  text-align: center;
+}
+.main {
+  padding-top: 80px;
+  &-section {
+    min-height: calc(100vh - 80px);
+    background: url("../img/Background.png");
+    background-position: center top;
+    background-size: cover;
+    align-items: center;
+    padding-top: 180px;
+  }
+  &-title {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 32px;
+    line-height: 44px;
+    max-width: 563px;
+    margin-left: auto;
+    margin-right: auto;
+    &_white {
+      color: $white;
+    }
+  }
+  &-btn {
+    width: 163px;
+    height:48px;
+    margin-top: 33px;
+  }
+  &-info {
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &-price {
+    color: $white;
+    margin-right: 15px;
+  }
+  &-sale {
+    text-decoration-line: line-through;
+    color: rgba(255, 255, 255, 0.33);
+  }
+}
+.header {
+  &-section {
+    background-color: $white;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    &_fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  &-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    &_toggle {
+      display: none;
+    }
+  }
+  &-link {
+    font-family: sans-serif;
+    margin-left: 67px;
+    color: $dark;
+    font-weight: 500;
+    font-size: 21px;
+    &_danger {
+      color: $danger;
+      text-transform: uppercase;
+    }
+    &:last-child {
+      margin-left: 32px;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &-search {
+    margin-left: 40px;
+    margin-right: 24px;
+  }
+  &-form {
+    display: none;
+  }
+  &-checkout {
+    position: relative;
+  }
+  &-badge {
+    position: absolute;
+    text-align: center;
+
+    &_danger {
+      background-color: $danger;
+      color: $white;
+    }
+  }
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: .3s all ease;
+  &:hover {
+    text-decoration: none;
+    opacity: .8;
+  }
+  &-danger {
+    background-color: $danger;
+    color: $white;
+    border: 1px solid #950000;
+    box-shadow: inset 0px -2px 2px rgba(32, 32, 32, 0.33);
+    &:hover {
+      color: $white;
+    }
+  }
+}
+@import 'media'

@@ -1,0 +1,70 @@
+.onoffswitch {
+    position: relative;
+    top: 5px;
+    width: 73px;
+    height: 34px;
+    border-radius: 23px;
+    background-color: #000000;
+    margin-bottom: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+    input[type="checkbox"] {
+      transition: .3s;
+      display: none;
+      & + .input_switcher {
+        width: 28px;
+        height: 25px;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 3;
+        left: 3px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        & + .input_bg {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding-right: 10px;
+          font-size: 14px;
+          color: #cbdbec;
+          z-index: 2;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top:0;
+          bottom: 0;
+          right: 0;
+          background-color: transparent;
+        }
+      }
+      &:checked {
+        & + .input_switcher {
+          left: auto;
+          right: 3px;
+          & + .input_bg {
+            background-color: #cbdbec;
+            color: #000000;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1520px){
+      width: 55px;
+      height: 25px;
+      input[type="checkbox"] {
+        & + .input_switcher {
+          width: 21px;
+          height: 21px;
+          & + .input_bg {
+            font-size: 9px;
+          }
+
+        }
+      }
+    }
+}
