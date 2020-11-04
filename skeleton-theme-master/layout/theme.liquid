@@ -10,11 +10,18 @@
   <title>{{ shop.name }}</title>
 
   <meta name="description" content="">
-
+{{ 'style.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
 </head>
 
 <body>
-  {{ content_for_layout }}
+  <div class="wrapper">
+    
+    {% section 'header' %}
+    <main class="main">
+      {{ content_for_layout }}
+    </main>
+  </div>
+
 </body>
 </html>
