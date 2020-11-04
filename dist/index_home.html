@@ -62,11 +62,20 @@
                         <div class="header-process"><a class="header-process_cart btn btn-dark btn-dark_outline" href="#">View cart</a><a class="header-process_checkout btn btn-danger" href="#">Proceed to checkout</a></div>
                     </div>
                 </div>
-                <div class="container d-flex"><a class="header-nav_toggle" href="#" id="header_nav_toggle"></a>
+                <div class="container d-flex"><a class="header-nav_toggle" href="#" id="header_nav_toggle"><svg width="32" height="17" viewBox="0 0 32 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0.5" y1="0.5" x2="31.5" y2="0.5" stroke="#202020" stroke-linecap="round" />
+                            <line x1="0.5" y1="8.5" x2="24.5" y2="8.5" stroke="#202020" stroke-linecap="round" />
+                            <line x1="0.5" y1="16.5" x2="31.5" y2="16.5" stroke="#202020" stroke-linecap="round" />
+                        </svg></a>
                     <div class="header-logo"><img class="header-tumb" src="./img/logo.png" alt="logo" /></div>
-                    <nav class="header-nav"><a class="header-nav_close" href="#"><img src="./img/close.png" alt="close" /></a><a class="header-link" href="">Vikings</a><a class="header-link" href="">Ancient Egypt</a><a class="header-link" href="">Celtics</a><a class="header-link header-link_danger" href="">Sale</a><a class="header-search" href="#" id="header_search"><img src="./img/search.svg" alt="search" /></a>
+                    <nav class="header-nav" id="header_nav"><a class="header-nav_close" href="#"><img src="./img/close.png" alt="close" /></a><a class="header-link" href="">Vikings</a><a class="header-link" href="">Ancient Egypt</a><a class="header-link" href="">Celtics</a><a class="header-link header-link_danger" href="">Sale</a><a class="header-search" href="#" id="header_search"><img src="./img/search.svg" alt="search" /></a>
                         <form class="header-form" action="/search" method="get">
-                            <div class="header-group"><input class="header-input" type="text" name="q" value="Type your search" /><input class="header-btn" type="submit" /></div>
+                            <div class="header-group"><input class="header-input" type="text" name="q" placeholder="Type your search" /><button class="header-btn" type="submit"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.33">
+                                            <circle cx="9.23898" cy="9.23898" r="8.73898" stroke="white" />
+                                            <line x1="15.7517" y1="15.0447" x2="24.3535" y2="23.6464" stroke="white" />
+                                        </g>
+                                    </svg></button></div>
                         </form>
                     </nav><a class="header-checkout" href="#" id="header_checkout"><img src="./img/checkout.svg" alt="checkout" /><span class="header-badge header-badge_danger"></span></a>
                 </div>

@@ -68,10 +68,11 @@ html(lang="en")
 								a(href="#").header-process_checkout.btn.btn-danger Proceed to checkout
 
 					.container.d-flex
-						a(href="#").header-nav_toggle#header_nav_toggle
+						a(href="#").header-nav_toggle#header_nav_toggle <svg width="32" height="17" viewBox="0 0 32 17" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.5" y1="0.5" x2="31.5" y2="0.5" stroke="#202020" stroke-linecap="round"/><line x1="0.5" y1="8.5" x2="24.5" y2="8.5" stroke="#202020" stroke-linecap="round"/><line x1="0.5" y1="16.5" x2="31.5" y2="16.5" stroke="#202020" stroke-linecap="round"/></svg>
+
 						.header-logo
 							img(src="./img/logo.png", alt="logo").header-tumb
-						nav.header-nav
+						nav.header-nav#header_nav
 							a(href="#").header-nav_close
 								img(src="./img/close.png", alt="close")
 							a(href="").header-link Vikings
@@ -82,8 +83,9 @@ html(lang="en")
 								img(src="./img/search.svg", alt="search")
 							form.header-form(action="/search" method="get")
 								.header-group
-									input.header-input(type="text" name="q" value="Type your search")
-									input.header-btn(type="submit")
+									input.header-input(type="text" name="q" placeholder="Type your search")
+									button.header-btn(type="submit") <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.33"><circle cx="9.23898" cy="9.23898" r="8.73898" stroke="white"/><line x1="15.7517" y1="15.0447" x2="24.3535" y2="23.6464" stroke="white"/></g></svg>
+
 						a(href="#").header-checkout#header_checkout
 							img(src="./img/checkout.svg", alt="checkout")
 							span.header-badge.header-badge_danger

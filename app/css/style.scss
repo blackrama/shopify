@@ -455,6 +455,11 @@ video {
     padding-left: 12px;
     font-size: 12px;
     font-weight: normal;
+    appearance: none;
+    padding-right: 25px;
+    background-image: url("../img/chevron.png");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
   }
   &-price {
     font-size: 36px;
