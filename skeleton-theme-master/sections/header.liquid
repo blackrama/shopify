@@ -103,6 +103,15 @@
     
     </span></a>
   </div>
+  <script>
+    (function(){
+    fetch('/cart.js')
+      .then(response => response.json())
+    .then(data => { document.querySelector('.header-total_price').textContent= data.currency==='USD'?'$'+data.items_subtotal_price: data.currency + data.items_subtotal_price ;console.log(data.items_subtotal_price);return data });
+  
+    })()
+
+</script>
 </header>
 
 {% schema %}
