@@ -1,0 +1,105 @@
+              <header class="header-section header-section_fixed">
+                <div class="header-salebox header-salebox_fixed">
+                    <div class="header-salebox_top"><span class="header-salebox_count">Cart (8 items)</span><a class="header-salebox_close" href="#"><svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="1.35355" y1="0.646452" x2="25.3535" y2="24.6464" stroke="#202020" />
+                                <line x1="0.646447" y1="24.6464" x2="24.6464" y2="0.646442" stroke="#202020" />
+                            </svg></a></div>
+                    <div class="header-salebox_content">
+                        <div class="header-items">
+                            <div class="header-item">
+                                <div class="header-item_img"><img src="./img/01.png" alt="img" /></div>
+                                <div class="header-item_content">
+                                    <div class="header-item_title">Handmade Stainless Steel Massive Wolf Chain with Odin’s Protection Charm - <span class="header-size">.50cm / 20in</span></div>
+                                    <div class="header-pay">
+                                        <div class="header-price header-price_danger">$19.95 </div>
+                                        <div class="header-sale header-sale_through"> $29.95</div>
+                                    </div>
+                                    <form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" /><button class="header-inc">+</button></form>
+                                </div>
+                            </div>
+                            <div class="header-item">
+                                <div class="header-item_img"><img src="./img/01.png" alt="img" /></div>
+                                <div class="header-item_content">
+                                    <div class="header-item_title">Handmade Stainless Steel Massive Wolf Chain with Odin’s Protection Charm - <span class="header-size">.50cm / 20in</span></div>
+                                    <div class="header-pay">
+                                        <div class="header-price header-price_danger">$19.95 </div>
+                                        <div class="header-sale header-sale_through"> $29.95</div>
+                                    </div>
+                                    <form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" /><button class="header-inc">+</button></form>
+                                </div>
+                            </div>
+                            <div class="header-item">
+                                <div class="header-item_img"><img src="./img/01.png" alt="img" /></div>
+                                <div class="header-item_content">
+                                    <div class="header-item_title">Handmade Stainless Steel Massive Wolf Chain with Odin’s Protection Charm - <span class="header-size">.50cm / 20in</span></div>
+                                    <div class="header-pay">
+                                        <div class="header-price header-price_danger">$19.95 </div>
+                                        <div class="header-sale header-sale_through"> $29.95</div>
+                                    </div>
+                                    <form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" /><button class="header-inc">+</button></form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-salebox_process">
+                        <div class="header-total"> <span class="header-subtotal">Subtotal</span><span class="header-total_price">$144.95</span></div>
+                        <div class="header-process"><a class="header-process_cart btn btn-dark btn-dark_outline" href="#">View cart</a><a class="header-process_checkout btn btn-danger" href="#">Proceed to checkout</a></div>
+                    </div>
+                </div>
+                <div class="container d-flex"><a class="header-nav_toggle" href="#" id="header_nav_toggle"><svg width="32" height="17" viewBox="0 0 32 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0.5" y1="0.5" x2="31.5" y2="0.5" stroke="#202020" stroke-linecap="round" />
+                            <line x1="0.5" y1="8.5" x2="24.5" y2="8.5" stroke="#202020" stroke-linecap="round" />
+                            <line x1="0.5" y1="16.5" x2="31.5" y2="16.5" stroke="#202020" stroke-linecap="round" />
+                        </svg></a>
+                    <div class="header-logo"><img class="header-tumb" src={{ section.settings.logo | img_url: 'large' }} alt="logo" /></div>
+                    <nav class="header-nav" id="header_nav">
+                      <a class="header-nav_close" href="#"><img src="https://cdn.shopify.com/s/files/1/0507/2050/6044/files/close.png?v=1604348941" alt="close" /></a>
+
+      {% for link in linklists.main-menu.links %}
+        <a class="header-link" href= "{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+
+                      <a class="header-link header-link_danger" href="">Sale</a>
+                      
+                      
+                      <a class="header-search" href="#" id="header_search">
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9.23898" cy="9.23898" r="8.73898" stroke="#202020"/>
+                        <line x1="15.7519" y1="15.0447" x2="24.3536" y2="23.6464" stroke="#202020"/>
+                        </svg></a>
+                        <form class="header-form" action="/search" method="get">
+                            <div class="header-group"><input class="header-input" type="text" name="q" placeholder="Type your search" /><button class="header-btn" type="submit"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.33">
+                                            <circle cx="9.23898" cy="9.23898" r="8.73898" stroke="white" />
+                                            <line x1="15.7517" y1="15.0447" x2="24.3535" y2="23.6464" stroke="white" />
+                                        </g>
+                                    </svg></button></div>
+                        </form>
+                    </nav><a class="header-checkout" href="#" id="header_checkout"><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 1H3.0374L6.42424 17.7756C6.45112 18.4521 6.98872 18.9932 7.66071 18.9932H23.9498" stroke="#202020"/>
+                      <path d="M3.5 3.81398H22.9015C23.3316 3.81398 23.7079 3.97632 23.9767 4.30101C24.2186 4.6257 24.3261 5.03157 24.2455 5.46449L22.7133 13.5006C22.5521 14.3664 21.7188 15.0428 20.8586 15.0699H5.86646" stroke="#202020"/>
+                      <path d="M8.34888 22.8354C8.34888 21.9179 9.09579 21.1708 9.99925 21.1708C10.9027 21.1708 11.6496 21.9179 11.6496 22.8354C11.6496 23.7529 10.9027 24.5 9.99925 24.5C9.09579 24.5 8.34888 23.7529 8.34888 22.8354Z" stroke="#202020"/>
+                      <path d="M18.2675 22.8354C18.2675 21.9179 19.0144 21.1708 19.9178 21.1708C20.8213 21.1708 21.5682 21.9179 21.5682 22.8354C21.5682 23.7529 20.8213 24.5 19.9178 24.5C19.0144 24.5 18.2675 23.7529 18.2675 22.8354Z" stroke="#202020"/>
+                      </svg><span class="header-badge header-badge_danger"></span></a>
+                </div>
+            </header>
+
+{% schema %}
+	{
+		"name": "Header",
+		"settings": [
+			{
+			      "type": "image_picker",
+     				 "id": "logo",
+     				 "label": "Logo image"
+			}
+			
+		]
+	}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
