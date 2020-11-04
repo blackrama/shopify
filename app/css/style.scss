@@ -35,6 +35,9 @@ img,
 video {
   max-width: 100%;
 }
+.wrapper {
+  overflow-x: hidden;
+}
 .container {
   max-width: 1154px;
   margin: 0 auto;
@@ -90,6 +93,23 @@ video {
   }
 }
 .header {
+  &-total {
+    padding-bottom: 12px;
+    
+    display: flex;
+    justify-content: space-between;
+    &_price {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  
+  }
+  &-subtotal {
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.33);
+
+  }
   &-section {
     background-color: $white;
     padding-top: 24px;
@@ -145,6 +165,173 @@ video {
       color: $white;
     }
   }
+  &-salebox {
+      
+      
+      width: 360px;
+      background-color: $white;
+  
+      transition: .3s all ease-in;
+      &.active {
+        display: block;
+        right: 0;
+        &::after {
+          right: 360px;
+          left: 0;
+        }
+      }
+    &_process {
+      background: #F4F4F4;
+      padding-top: 19px;
+      padding-bottom: 15px;
+      z-index: 5;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    &_top {
+      background-color: #F4F4F4;
+      height: 53px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      padding-left: 20px;
+      padding-right: 18px;
+
+    }
+  
+    &_count {
+      color: #B4B4B4;
+      text-transform: uppercase;
+      font-size: 13px;
+      line-height: 16px;
+    }
+    &_fixed {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      bottom:0;
+      left: auto;
+      z-index: 99;
+      
+      
+      &::after {
+        content: '';
+        display: block;
+        position: fixed;
+        left: -100vw;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        background: #131824;
+        opacity: .8;
+        width: calc(100vw - 360px);
+        z-index: -99;
+        transition: .3s all ease-in;
+      }
+    }
+    &_content {
+      overflow-y: auto;
+      min-height: 200px;
+      height: calc(100% - 166px);
+    }
+  }
+  &-items {
+    height: 100%;
+    padding-top: 18px;
+  }
+  &-item {
+    display: flex;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-bottom: 1px solid rgba(32, 32, 32, 0.05);
+    &_img {
+      min-width: 64px;
+      min-height: 64px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 16px;
+    }
+    &_title {
+      text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.33);
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 20px;
+      margin-bottom: 12px;
+      margin-top: 10px;
+    }
+  }
+  &-process {
+    &_cart {
+      width: 119px;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    &_checkout {
+      width: 190px;
+      height: 48px;
+      margin-left: 15px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  &-pay {
+    display: flex;
+  }
+  &-price {
+    margin-right: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 16px;
+    &_danger {
+      color: $danger;
+    }
+  }
+  &-sale {
+    font-size: 16px;
+    color: #B4B4B4;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.33);
+  }
+  &-counter {
+    display: flex;
+    align-items: center;
+  }
+  &-input {
+    width: 61px;
+    height: 32px;
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.13);
+    border: 1px solid #D8D8D8;
+    text-align: center;
+    font-size: 13px;
+    background-color: $white;
+  }
+  &-dec {
+    height: 32px;
+    width: 32px;
+    background-color: $white;
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.13);
+    border: 1px solid #D8D8D8;
+    padding: 0;
+  
+    border-top-left-radius: 4px ;
+    border-bottom-left-radius: 4px ;
+  }
+  &-inc {
+    height: 32px;
+    width: 32px;
+    background-color: $white;
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.13);
+    border: 1px solid #D8D8D8;
+    padding: 0;
+   
+    border-top-right-radius: 4px ;
+    border-bottom-right-radius: 4px ;
+  }
 }
 .btn {
   display: inline-flex;
@@ -165,5 +352,19 @@ video {
       color: $white;
     }
   }
+  
+  &-dark {
+    border:  1px solid $dark;
+    background-color: $dark;
+    color: $white;
+    &_outline {
+      background-color: $white;
+      color: $dark;
+      &:hover {
+        color: $dark;
+      }
+    }
+  }
+
 }
 @import 'media'
