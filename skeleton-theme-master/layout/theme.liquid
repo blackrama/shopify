@@ -23,7 +23,7 @@
       {{ content_for_layout }}
     </main>
   </div>
-  
+  {{'https://code.jquery.com/jquery-3.5.1.min.js'| script_tag}}
   {{ 'slick.min.js' | asset_url | script_tag }}
   {{ 'main.js' | asset_url | script_tag }}
 </body>
