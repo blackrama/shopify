@@ -1,10 +1,10 @@
-<div class="main-section d-flex">
+<div class="main-section d-flex" style='background-image: url({{ section.settings.background | img_url: 'large' }});'>
   <div class="container text-center">
     <h1 class="main-title main-title_white">{{ section.settings.title }}</h1>
-    <div class="main-info"><span class="main-price">$19.95    </span><span class="main-sale">$29.95 </span></div><a class="main-btn btn btn-danger" href="#">Start Shopping</a>
+    <div class="main-info"><span class="main-price">{{ section.settings.price }}   </span><span class="main-sale">{{ section.settings.sale }} </span></div><a class="main-btn btn btn-danger" href="#">Start Shopping</a>
   </div>
 </div>
-
+{{ section.settings.background | img_url: 'large' }}
 
 {% schema %}
   {
@@ -16,9 +16,21 @@
           "default": "title"
         },
         {
+          "id": "price",
+          "type": "text",
+          "label": "Price",
+          "default": "$0"
+        },
+        {
+          "id": "sale",
+          "type": "text",
+          "label": "Sale",
+          "default": "$0"
+        },
+        {
           "type": "image_picker",
-            "id": "logo",
-            "label": "Logo image"
+            "id": "background",
+            "label": "background"
       }
   ]
   }
