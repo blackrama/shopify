@@ -8,7 +8,7 @@ $dark: #202020;
 // @import 'buttons';
 // @import 'dropdown';
 // @import 'titles';
-// @import 'slick';
+@import 'slick';
 // @import 'switchers';
 // @import 'rangeslider';
 // @import 'colorpicker';
@@ -93,6 +93,7 @@ video {
   }
 }
 .header {
+  
   &-total {
     padding-bottom: 12px;
     
@@ -114,11 +115,13 @@ video {
     background-color: $white;
     padding-top: 24px;
     padding-bottom: 24px;
+    border-bottom: 1px solid rgba(32, 32, 32, 0.05);
     &_fixed {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
+      z-index: 98;
     }
   }
   &-nav {
@@ -208,7 +211,7 @@ video {
     }
     &_fixed {
       position: fixed;
-      right: -100%;
+      right: -200%;
       top: 0;
       bottom:0;
       left: auto;
@@ -219,7 +222,7 @@ video {
         content: '';
         display: block;
         position: fixed;
-        left: -100vw;
+        left: -200vw;
         right: auto;
         top: 0;
         bottom: 0;
@@ -366,5 +369,177 @@ video {
     }
   }
 
+}
+.product {
+  &-section {
+    padding-top: 20px;
+    & .container {
+      align-items: flex-start;
+    }
+  }
+  &-form {
+    &_dec {
+      height: 48px;
+      width: 44px;
+      background: $white;
+      border: 1px solid #D8D8D8;
+      box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.13);
+      border-radius: 4px 0px 0px 4px;
+    }
+    &_inc {
+      height: 48px;
+      width: 44px;
+      background: $white;
+      border: 1px solid #D8D8D8;
+      box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.13);
+      border-radius: 0px 4px 4px 0px;
+    }
+    &_input {
+      width: 63px;
+      height: 48px;
+      text-align: center;
+      background: $white;
+      border: 1px solid #D8D8D8;
+      box-sizing: border-box;
+      box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.13);
+    }
+    &_counter {
+      display: flex;
+      align-items: center;
+    }
+    &_add {
+      width: 262px;
+      height: 48px;
+      margin-left: 15px;
+    }
+  }
+  &-description {
+    padding-top: 46px;
+    &_title {
+      font-weight: 600;
+    }
+    &_text {
+      & p {
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+      }
+    }
+  }
+  &-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  &-title {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: normal;
+    margin-bottom: 38px;
+  }
+  &-label {
+    font-size: 21px;
+    line-height: 26px;
+    color: #000;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
+  }
+  &-select {
+    box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.13);
+    border-radius: 4px;
+    border: 1px solid #D8D8D8;
+    width: 293px;
+    height: 48px;
+    padding-left: 12px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+  &-price {
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;
+    color: $danger;
+    margin-top: 18px;
+    margin-bottom: 34px;
+  }
+  &-tax {
+    font-size: 13px;
+    color: #232231;
+    position: relative;
+    top: -21px;
+    margin-left: 5px;
+  }
+  &-slider {
+    max-width: 659px;
+    width: 100%;
+    &_top {
+      margin-bottom: 16px;
+      max-height: 524px;
+      & .slick-prev {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+        font-size: 0;
+        color: transparent;
+        width: 48px;
+        border: none;
+        background-color: #21212133;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 13px;
+          height: 13px;
+          border-left: 2px solid $white;
+          border-top: 2px solid $white;
+          z-index: 5;
+          transform: rotate(-45deg);
+          left: calc(50% - 6.5px);
+          top: calc(50% - 6.5px);
+        }
+      }
+      & .slick-next {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+        font-size: 0;
+        color: transparent;
+        width: 48px;
+        border: none;
+        background-color: #21212133;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 13px;
+          height: 13px;
+          border-right: 2px solid $white;
+          border-top: 2px solid $white;
+          z-index: 5;
+          transform: rotate(45deg);
+          left: calc(50% - 6.5px);
+          top: calc(50% - 6.5px);
+        }
+      }
+    }
+    &_bottom {
+      max-width: 240px;
+      &__thumb {
+        width: 64px;
+        height: 64px;
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }
 @import 'media'

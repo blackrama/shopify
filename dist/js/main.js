@@ -26,5 +26,23 @@ if(header_checkout !== null) {
   console.log("%cDOM loaded, @blackrama13", "color: #3e5a86; font-size:10px;background:#020819;padding:10px;border-radius:5px;");
 });
 
+$( document ).ready(function() {
+console.log('readey');
+  const product_slider_top = $('#product_slider_top');
+    if(product_slider_top.length) {
+      product_slider_top.slick();
+    }
+    const product_slider_bottom = $('#product_slider_bottom');
+    if(product_slider_bottom.length) {
+      product_slider_bottom.slick({
+        slidesToShow: 3,
+        arrows: false,
+        infinite:false
+      });
+    }
+
+
+});
+
 
 
