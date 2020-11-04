@@ -1,0 +1,25 @@
+<div class="main-section d-flex">
+  <div class="container text-center">
+    <h1 class="main-title main-title_white">{{ section.settings.title }}</h1>
+    <div class="main-info"><span class="main-price">$19.95    </span><span class="main-sale">$29.95 </span></div><a class="main-btn btn btn-danger" href="#">Start Shopping</a>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Content",
+    "settings": [{
+		"id": "title",
+		"type": "text",
+		"label": "Title",
+		"default": "title"
+	}]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
