@@ -1,0 +1,71 @@
+<div class="product-section">
+  <div class="container d-flex">
+      <div class="product-slider">
+          <div class="product-slider_top" id="product_slider_top">
+            {% for media in product.media %}
+            <div class="product-slider_top__slide">
+              <div class="product-slider_top__thumb">
+                <img src={{media | img_url: "700x700" }} alt={{product.title}}>
+              </div>
+            </div>
+            {% endfor%}
+          </div>
+          <div class="product-slider_bottom" id="product_slider_bottom">     
+            {% for media in product.media %}
+            <div class="product-slider_bottom__slide">
+              <div class="product-slider_bottom__thumb">
+                <img src={{media | img_url: "80x80" }} alt={{product.title}}>
+              </div>
+            </div>
+            {% endfor%}
+          </div>
+      </div>
+      <div class="product-content">
+          <h1 class="product-title">{{product.title}}</h1>
+          <div class="product-info">
+              <form class="product-form" id="product_form"><label class="product-label" for="product">{{ section.settings.label }}</label><select class="product-select" name="id" id="product">
+                    {% for variant in product.variants %}
+                        <option value="{{ variant.id }}">{{ variant.title }}</option>
+                      {% endfor%}
+                  </select>
+                  <div class="product-price">{{section.settings.currency}}{{ currency.symbol }}{{product.price}}<span class="product-tax">Tax included</span></div>
+                  <div class="product-form_group d-flex">
+                      <div class="product-form_counter"><button class="product-form_dec">-</button><input class="product-form_input" type="text" /><button class="product-form_inc">+</button></div><button class="product-form_add btn btn-danger">Add To Cart</button>
+                  </div>
+              </form>
+              <div class="product-description">
+                  <div class="product-description_text">
+                      {{product.description }}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+"name": "Content",
+"settings": [{
+"id": "label",
+"type": "text",
+"label": "label",
+"default": "label"
+},
+{
+"id": "currency",
+"type": "text",
+"label": "if native cyrrency not working",
+"default": "$"
+}
+
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
