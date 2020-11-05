@@ -1,0 +1,15 @@
+development: 
+  password: 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
+  theme_id: "115068928188"
+  store: storetest011.myshopify.com
+  ignore_files:
+    - "*.gif"
+    - "*.jpg"
+    - config/settings_data.json
+production: 
+  password: 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
+  theme_id: "115163365564"
+  store: storetest011.myshopify.com
+  timeout: 60s
+  readonly: true
+
