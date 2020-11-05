@@ -16,43 +16,11 @@
               </svg></a></div>
       <div class="header-salebox_content">
           <div class="header-items">
-              <div class="header-item">
-                  <div class="header-item_img"><img src="./img/01.png" alt="img" /></div>
-                  <div class="header-item_content">
-                      <div class="header-item_title">Handmade Stainless Steel Massive Wolf Chain with Odin’s Protection Charm - <span class="header-size">.50cm / 20in</span></div>
-                      <div class="header-pay">
-                          <div class="header-price header-price_danger">$19.95 </div>
-                          <div class="header-sale header-sale_through"> $29.95</div>
-                      </div>
-                      <form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" /><button class="header-inc">+</button></form>
-                  </div>
-              </div>
-              <div class="header-item">
-                  <div class="header-item_img"><img src="./img/01.png" alt="img" /></div>
-                  <div class="header-item_content">
-                      <div class="header-item_title">Handmade Stainless Steel Massive Wolf Chain with Odin’s Protection Charm - <span class="header-size">.50cm / 20in</span></div>
-                      <div class="header-pay">
-                          <div class="header-price header-price_danger">$19.95 </div>
-                          <div class="header-sale header-sale_through"> $29.95</div>
-                      </div>
-                      <form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" /><button class="header-inc">+</button></form>
-                  </div>
-              </div>
-              <div class="header-item">
-                  <div class="header-item_img"><img src="./img/01.png" alt="img" /></div>
-                  <div class="header-item_content">
-                      <div class="header-item_title">Handmade Stainless Steel Massive Wolf Chain with Odin’s Protection Charm - <span class="header-size">.50cm / 20in</span></div>
-                      <div class="header-pay">
-                          <div class="header-price header-price_danger">$19.95 </div>
-                          <div class="header-sale header-sale_through"> $29.95</div>
-                      </div>
-                      <form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" /><button class="header-inc">+</button></form>
-                  </div>
-              </div>
+                  
           </div>
       </div>
       <div class="header-salebox_process">
-          <div class="header-total"> <span class="header-subtotal">Subtotal</span><span class="header-total_price">$144.95</span></div>
+          <div class="header-total"> <span class="header-subtotal">Subtotal</span><span class="header-total_price">$0</span></div>
           <div class="header-process"><a class="header-process_cart btn btn-dark btn-dark_outline" href="#">View cart</a><a class="header-process_checkout btn btn-danger" href="#">Proceed to checkout</a></div>
       </div>
   </div>
@@ -102,12 +70,16 @@
 {% if count > 0 %}{{ count }}{% endif %}
     
     </span></a>
-  </div>
+  </div>  
   <script>
     (function(){
     fetch('/cart.js')
       .then(response => response.json())
-    .then(data => { document.querySelector('.header-total_price').textContent= data.currency==='USD'?'$'+data.items_subtotal_price: data.currency + data.items_subtotal_price ;console.log(data.items_subtotal_price);return data });
+    .then(data => { 
+      document.querySelector('.header-total_price').textContent= data.currency==='USD'?'$'+data.items_subtotal_price.toString().slice(0,-2)+'.'+data.items_subtotal_price.toString().slice(-2): data.currency + data.items_subtotal_price.toString().slice(0,-2)+'.'+data.items_subtotal_price.toString().slice(-2) ;                
+data.items.forEach(item => 
+            document.querySelector('.header-items').insertAdjacentHTML ('afterbegin', '<div class="header-item"><div class="header-item_img"><img src="' + item.image +'" alt="img" /></div><div class="header-item_content"><div class="header-item_title">' + item.title + '-<span class="header-size">' + item.variant_title +'</span></div><div class="header-pay"><div class="header-price header-price_danger">' + '$'+item.discounted_price.toString().slice(0,-2)+'.'+item.discounted_price.toString().slice(-2) + '</div><div class="header-sale header-sale_through">' + '$'+item.price.toString().slice(0,-2)+'.'+item.price.toString().slice(-2) + '</div></div><form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" value="'+item.quantity +'" /><button class="header-inc">+</button></form></div></div>' ));
+return data });
   
     })()
 

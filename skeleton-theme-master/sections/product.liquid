@@ -24,13 +24,13 @@
           <h1 class="product-title">{{product.title}}</h1>
           <div class="product-info">
               <form class="product-form" id="product_form"><label class="product-label" for="product">{{ section.settings.label }}</label><select class="product-select" name="id" id="product">
-                    {% for variant in product.variants %}
+                     {% for variant in product.variants %}
                         <option value="{{ variant.id }}">{{ variant.title }}</option>
                       {% endfor%}
                   </select>
                   <div class="product-price">{{section.settings.currency}}{{ currency.symbol }}{{product.price}}<span class="product-tax">Tax included</span></div>
                   <div class="product-form_group d-flex">
-                      <div class="product-form_counter"><button class="product-form_dec">-</button><input class="product-form_input" type="text" /><button class="product-form_inc">+</button></div><button class="product-form_add btn btn-danger">Add To Cart</button>
+                      <div class="product-form_counter"><button class="product-form_dec">-</button><input class="product-form_input" type="text" value="1" name="quantity" size="3" min="1"/><button class="product-form_inc">+</button></div><button class="product-form_add btn btn-danger">Add To Cart</button>
                   </div>
               </form>
               <div class="product-description">
@@ -43,6 +43,48 @@
   </div>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+function updateCart(){
+fetch('/cart.js')
+.then(response => response.json())
+.then(data => { 
+document.querySelector('.header-salebox_count').textContent = 'Cart ('+data.item_count+ ' items)';
+document.querySelector('.header-total_price').textContent= data.currency==='USD'?'$'+data.items_subtotal_price.toString().slice(0,-2)+'.'+data.items_subtotal_price.toString().slice(-2): data.currency + data.items_subtotal_price.toString().slice(0,-2)+'.'+data.items_subtotal_price.toString().slice(-2) ;
+document.querySelector('#header_checkout span').textContent = data.item_count ;   
+document.querySelector('.header-items').innerHTML ="";
+data.items.forEach(item => 
+document.querySelector('.header-items').insertAdjacentHTML ('afterbegin', '<div class="header-item"><div class="header-item_img"><img src="' + item.image +'" alt="img" /></div><div class="header-item_content"><div class="header-item_title">' + item.title + '-<span class="header-size">' + item.variant_title +'</span></div><div class="header-pay"><div class="header-price header-price_danger">' + '$'+item.discounted_price.toString().slice(0,-2)+'.'+item.discounted_price.toString().slice(-2) + '</div><div class="header-sale header-sale_through">' + '$'+item.price.toString().slice(0,-2)+'.'+item.price.toString().slice(-2) + '</div></div><form class="header-counter" action=""><button class="header-dec">-</button><input class="header-input" type="text" value="'+item.quantity +'" /><button class="header-inc">+</button></form></div></div>' ));
+ return data });
+
+}
+$('.product-form_add').on('click',function(e){
+e.preventDefault();
+$.ajax({
+type: 'POST', 
+url: '/cart/add.js',
+dataType: 'json', 
+data: $('#product_form').serialize(),
+success: updateCart,
+error: ()=>{console.log('no')},
+});
+})
+
+
+
+const product_form = document.querySelector('#product_form');
+product_form.querySelector('.product-form_dec').onclick = (e)=> {
+e.preventDefault();
+const val = +product_form.querySelector('.product-form_input').value;
+product_form.querySelector('.product-form_input').value = val>1? val - 1: 1;
+}
+product_form.querySelector('.product-form_inc').onclick = (e)=> {
+e.preventDefault();
+const val = +product_form.querySelector('.product-form_input').value;
+product_form.querySelector('.product-form_input').value = val+ 1;
+}
+})
+</script>
 
 {% schema %}
 {

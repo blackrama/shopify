@@ -162,6 +162,16 @@ video {
   &-badge {
     position: absolute;
     text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -6px;
+    right: -6px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
 
     &_danger {
       background-color: $danger;
